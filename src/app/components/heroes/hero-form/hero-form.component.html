@@ -1,7 +1,15 @@
-<label for="">Hero Name </label>
-<input type="text" [(ngModel)]="hero.name"/>
-<br/>
-<label for="">Hero Description </label>
-<input type="text" [(ngModel)]="hero.description"/>
+<div class="container">
+    <div class="mb-3">
+        <label for="" class="form-label">Hero Name</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+            [(ngModel)]="hero.name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Hero Description</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+            [(ngModel)]="hero.description">
+    </div>
 
-<button (click)="addHero()" [disabled]="hero.name.length === 0">add hero</button>
+    <button type="button" class="btn btn-primary" (click)="addHero()" [disabled]="hero.name.length === 0">Add
+        Hero</button>
+</div>

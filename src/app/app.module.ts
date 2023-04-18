@@ -9,6 +9,7 @@ import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroFormComponent } from './components/heroes/hero-form/hero-form.component';
 import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list
     HeroesListComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
