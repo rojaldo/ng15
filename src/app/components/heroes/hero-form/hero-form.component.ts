@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
+import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-hero-form',
@@ -12,8 +13,18 @@ export class HeroFormComponent {
 
   hero = new Hero();
 
+  constructor(private service: HeroesService) { 
+    this.hero = this.service.formHero;
+  }
+
   addHero() {
     this.onNewHero.emit(this.hero);
     this.hero = new Hero();
   }
+
+  handleChange(){
+    this.service.updateFormHero(this.hero);
+  }
+
+  
 }

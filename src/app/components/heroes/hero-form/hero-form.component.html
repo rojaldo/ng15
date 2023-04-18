@@ -2,14 +2,14 @@
     <div class="mb-3">
         <label for="" class="form-label">Hero Name</label>
         <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
-            [(ngModel)]="hero.name">
+            [(ngModel)]="hero.name" (keyup)="handleChange()">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Hero Description</label>
         <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
-            [(ngModel)]="hero.description">
+            [(ngModel)]="hero.description" (keyup)="handleChange()">
     </div>
 
-    <button type="button" class="btn btn-primary" (click)="addHero()" [disabled]="hero.name.length === 0">Add
+    <button type="button" class="btn btn-primary" (click)="addHero()" [disabled]="hero.name.length">Add
         Hero</button>
 </div>

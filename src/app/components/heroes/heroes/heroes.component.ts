@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
+import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-heroes',
@@ -8,18 +9,27 @@ import { Hero } from 'src/app/models/hero';
 })
 export class HeroesComponent {
 
-  constructor() { }
+  constructor(public service: HeroesService) { }
 
-  heroes = [
-    new Hero('Windstorm', 'Really cool guy'), 
-    new Hero('Bombasto', 'Really cool guy'), 
-    new Hero('Magneta', 'Really cool guy'), 
-    new Hero('Tornado', 'Really cool guy')];
+  getHeroes() {
+    return this.service.heroes;
+  }
 
+  getFormHero() {
+    return this.service.formHero;
+  }
   
   addHero(newHero: Hero) {
     if (newHero.name.trim().length > 0) {
-      this.heroes.push(newHero);
+      this.service.addHero(newHero);
     }
+  }
+
+  handleChange(hero: Hero) {
+    this.service.updateFormHero(hero)
+  }
+
+  deleteHero(index: number) {
+    this.service.deleteHero(index)
   }
 }

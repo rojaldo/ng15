@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
 
 @Component({
@@ -8,4 +8,9 @@ import { Hero } from 'src/app/models/hero';
 })
 export class HeroesListComponent {
   @Input() myHeroes = new Array<Hero>();
+  @Output() onDeleteHero = new EventEmitter<number>();
+
+  deleteHero(index: number) {
+    this.onDeleteHero.emit(index);
+  }
 }
