@@ -1,0 +1,6 @@
+<label for="">Hero Name </label>
+<input type="text" [(ngModel)]="heroName"/>
+<button (click)="addHero()" [disabled]="heroName.length === 0">add hero</button>
+<ul>
+    <li *ngFor="let hero of heroes">{{hero}}</li>
+</ul>
