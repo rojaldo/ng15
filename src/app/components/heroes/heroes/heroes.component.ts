@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from 'src/app/models/hero';
 
 @Component({
   selector: 'app-heroes',
@@ -9,14 +10,18 @@ export class HeroesComponent {
 
   constructor() { }
 
-  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  heroes = [
+    new Hero('Windstorm', 'Really cool guy'), 
+    new Hero('Bombasto', 'Really cool guy'), 
+    new Hero('Magneta', 'Really cool guy'), 
+    new Hero('Tornado', 'Really cool guy')];
 
-  heroName = 'Superman';
+  hero = {name: '', description: ''};
 
   addHero() {
-    if (this.heroName.trim().length > 0) {
-      this.heroes.push(this.heroName);
-      this.heroName = '';
+    if (this.hero.name.trim().length > 0) {
+      this.heroes.push({name: this.hero.name, description:this.hero.description});
+      this.hero = new Hero();
     }
   }
 }
