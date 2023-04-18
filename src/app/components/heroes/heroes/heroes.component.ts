@@ -20,7 +20,7 @@ export class HeroesComponent {
 
   addHero() {
     if (this.hero.name.trim().length > 0) {
-      this.heroes.push({name: this.hero.name, description:this.hero.description});
+      this.heroes.push(new Hero(this.hero.name, this.hero.description));
       this.hero = new Hero();
     }
   }
