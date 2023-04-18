@@ -1,10 +1,2 @@
-<label for="">Hero Name </label>
-<input type="text" [(ngModel)]="hero.name"/>
-<br/>
-<label for="">Hero Description </label>
-<input type="text" [(ngModel)]="hero.description"/>
-
-<button (click)="addHero()" [disabled]="hero.name.length === 0">add hero</button>
-<ul>
-    <li *ngFor="let hero of heroes"><b>{{hero.name}}:</b> {{hero.description}}</li>
-</ul>
+<app-hero-form (onNewHero)="addHero($event)"></app-hero-form>
+<app-heroes-list [myHeroes]="heroes"></app-heroes-list>

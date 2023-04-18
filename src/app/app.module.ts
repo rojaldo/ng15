@@ -7,6 +7,8 @@ import { DisplayComponent } from './components/calculator/display/display.compon
 import { KeyboardComponent } from './components/calculator/keyboard/keyboard.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
+import { HeroFormComponent } from './components/heroes/hero-form/hero-form.component';
+import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FormsModule } from '@angular/forms';
     CalculatorComponent,
     DisplayComponent,
     KeyboardComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroFormComponent,
+    HeroesListComponent
   ],
   imports: [
     BrowserModule, FormsModule

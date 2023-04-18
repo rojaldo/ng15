@@ -1,0 +1,7 @@
+<label for="">Hero Name </label>
+<input type="text" [(ngModel)]="hero.name"/>
+<br/>
+<label for="">Hero Description </label>
+<input type="text" [(ngModel)]="hero.description"/>
+
+<button (click)="addHero()" [disabled]="hero.name.length === 0">add hero</button>

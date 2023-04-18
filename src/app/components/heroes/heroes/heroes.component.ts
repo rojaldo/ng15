@@ -16,12 +16,10 @@ export class HeroesComponent {
     new Hero('Magneta', 'Really cool guy'), 
     new Hero('Tornado', 'Really cool guy')];
 
-  hero = {name: '', description: ''};
-
-  addHero() {
-    if (this.hero.name.trim().length > 0) {
-      this.heroes.push(new Hero(this.hero.name, this.hero.description));
-      this.hero = new Hero();
+  
+  addHero(newHero: Hero) {
+    if (newHero.name.trim().length > 0) {
+      this.heroes.push(newHero);
     }
   }
 }
