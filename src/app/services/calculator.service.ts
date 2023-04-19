@@ -18,7 +18,7 @@ export class CalculatorService {
 
   constructor() { }
 
-  public handleNumber(value: number): string {
+  public handleNumber(value: number): void {
     switch(this._currentState) {
       case State.Init:
         this._firstFigure = value;
@@ -42,13 +42,14 @@ export class CalculatorService {
       default:
         break;
     }
-    return this._display;
+    // algo hay aqui
+
   }
 
-  public handleSymbol(value: string): string {
+  public handleSymbol(value: string): void {
     if(value === 'C') {
       this.clearCalculator();
-      return '';
+      return;
     }
     switch(this._currentState) {
       case State.Init:
@@ -79,7 +80,8 @@ export class CalculatorService {
       default:
         break;
     }
-    return this._display;
+    // algo hay aqui
+    
   }
 
   private resolve(): number {

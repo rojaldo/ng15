@@ -4,7 +4,7 @@ import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-hero-form',
-  templateUrl: './hero-form.component.html',
+  template: './hero-form.component.html',
   styleUrls: ['./hero-form.component.scss']
 })
 export class HeroFormComponent {
