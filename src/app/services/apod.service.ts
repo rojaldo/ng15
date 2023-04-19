@@ -15,7 +15,12 @@ export class ApodService {
   constructor(private service: HttpClient) {
   }
 
-  getApod() {
+  getApod(dateStr?: string) {
+    let url = 'https://api.nasa.gov/planetary/apod'
+    const apiKey = 'DEMO_KEY';
+
+    dateStr ? url += `?api_key=${apiKey}&date=${dateStr}` : url += `?api_key=${apiKey}`;
+
     const observable = {
       next: (data: any) => {
         console.log(data)
@@ -25,7 +30,7 @@ export class ApodService {
       error: (err: any) => console.log(err),
       complete: () => console.log('complete')
     };
-    this.service.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY').subscribe(observable);
+    this.service.get(url).subscribe(observable);
   }
 
 }

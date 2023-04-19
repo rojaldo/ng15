@@ -9,10 +9,13 @@ import { HeroesService } from 'src/app/services/heroes.service';
 })
 export class HeroesComponent {
 
-  constructor(public service: HeroesService) { }
+  heroes = new Array<Hero>();
 
-  getHeroes() {
-    return this.service.heroes;
+  constructor(public service: HeroesService) { 
+    this.service.heroes$.subscribe(
+      (heroes) => {
+        this.heroes = heroes;
+      })
   }
 
   getFormHero() {

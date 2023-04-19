@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 enum State {
   Init,
@@ -9,7 +10,10 @@ enum State {
 
 @Injectable()
 export class CalculatorService {
+
   private _display = '';
+  public display$ = new BehaviorSubject<string>(this._display);
+
   private _currentState = State.Init;
   private _firstFigure = 0;
   private _secondFigure = 0;
@@ -42,13 +46,13 @@ export class CalculatorService {
       default:
         break;
     }
-    // algo hay aqui
-
+    this.display$.next(this._display);
   }
 
   public handleSymbol(value: string): void {
     if(value === 'C') {
       this.clearCalculator();
+      this.display$.next(this._display);
       return;
     }
     switch(this._currentState) {
@@ -80,8 +84,7 @@ export class CalculatorService {
       default:
         break;
     }
-    // algo hay aqui
-    
+    this.display$.next(this._display);
   }
 
   private resolve(): number {

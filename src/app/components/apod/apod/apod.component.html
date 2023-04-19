@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="container d-flex">
+        <ngb-datepicker class="mx-auto mb-4" #dp [(ngModel)]="model" (dateSelect)="handleDateChange($event)"></ngb-datepicker>
+    </div>
     <div class="row align-items-md-stretch">
         <div class="col-md-12">
             <div

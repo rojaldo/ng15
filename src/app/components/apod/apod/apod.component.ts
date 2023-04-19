@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { ApodService } from 'src/app/services/apod.service';
 
 @Component({
@@ -9,8 +10,11 @@ import { ApodService } from 'src/app/services/apod.service';
 export class ApodComponent implements OnInit {
 
   apod: any = {};
+  model!: NgbDateStruct;
 
-  constructor(private service: ApodService) { }
+  constructor(private service: ApodService, private calendar: NgbCalendar) {
+    this.model = this.calendar.getToday();
+  }
 
   ngOnInit(): void {
     console.log('ngOnInit: ApodComponent');
@@ -21,6 +25,14 @@ export class ApodComponent implements OnInit {
     )
     this.service.getApod();
     // this.service.doSomething();
+    
+  }
+
+  handleDateChange(event: any) {
+    console.log('handleDateChange', event);
+    // transform NgbDateStruct to string in format yyyy-mm-dd
+    const dateStr = `${event.year}-${event.month}-${event.day}`;
+    this.service.getApod(dateStr);
     
   }
 

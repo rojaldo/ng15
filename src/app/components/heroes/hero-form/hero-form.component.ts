@@ -4,7 +4,7 @@ import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-hero-form',
-  template: './hero-form.component.html',
+  templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.scss']
 })
 export class HeroFormComponent {
@@ -20,6 +20,7 @@ export class HeroFormComponent {
   addHero() {
     this.onNewHero.emit(this.hero);
     this.hero = new Hero();
+    this.service.updateFormHero(this.hero);
   }
 
   handleChange(){
