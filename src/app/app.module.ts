@@ -16,6 +16,7 @@ import { ApodComponent } from './components/apod/apod/apod.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.component';
 import { ApodListComponent } from './components/apod/apod-list/apod-list.component';
+import { BeersComponent } from './components/beers/beers/beers.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ApodListComponent } from './components/apod/apod-list/apod-list.compone
     HeroesListComponent,
     ApodComponent,
     ApodPickerComponent,
-    ApodListComponent
+    ApodListComponent,
+    BeersComponent
   ],
   imports: [
     BrowserModule, FormsModule, NgbModule, HttpClientModule
