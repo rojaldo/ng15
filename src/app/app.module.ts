@@ -14,6 +14,8 @@ import { CalculatorService } from './services/calculator.service';
 import { HeroesService } from './services/heroes.service';
 import { ApodComponent } from './components/apod/apod/apod.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.component';
+import { ApodListComponent } from './components/apod/apod-list/apod-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     HeroesComponent,
     HeroFormComponent,
     HeroesListComponent,
-    ApodComponent
+    ApodComponent,
+    ApodPickerComponent,
+    ApodListComponent
   ],
   imports: [
     BrowserModule, FormsModule, NgbModule, HttpClientModule

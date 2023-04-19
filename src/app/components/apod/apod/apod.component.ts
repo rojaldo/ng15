@@ -10,10 +10,9 @@ import { ApodService } from 'src/app/services/apod.service';
 export class ApodComponent implements OnInit {
 
   apod: any = {};
-  model!: NgbDateStruct;
 
-  constructor(private service: ApodService, private calendar: NgbCalendar) {
-    this.model = this.calendar.getToday();
+  constructor(private service: ApodService) {
+
   }
 
   ngOnInit(): void {
@@ -28,10 +27,7 @@ export class ApodComponent implements OnInit {
     
   }
 
-  handleDateChange(event: any) {
-    console.log('handleDateChange', event);
-    // transform NgbDateStruct to string in format yyyy-mm-dd
-    const dateStr = `${event.year}-${event.month}-${event.day}`;
+  handleDateChange(dateStr: string) {
     this.service.getApod(dateStr);
     
   }
