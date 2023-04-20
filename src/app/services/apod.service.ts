@@ -4,9 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { of, tap, map } from 'rxjs';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApodService {
 
   private _apodData: any = {};

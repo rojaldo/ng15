@@ -25,6 +25,12 @@
         <app-beers></app-beers>
       </ng-template>
     </li>
+    <li [ngbNavItem]="5">
+      <button ngbNavLink>Forms</button>
+      <ng-template ngbNavContent>
+        <app-predictive-form></app-predictive-form>
+      </ng-template>
+    </li>
   </ul>
   
   <div [ngbNavOutlet]="nav" class="mt-2"></div>

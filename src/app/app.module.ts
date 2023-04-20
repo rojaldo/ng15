@@ -6,7 +6,7 @@ import { CalculatorComponent } from './components/calculator/calculator/calculat
 import { DisplayComponent } from './components/calculator/display/display.component';
 import { KeyboardComponent } from './components/calculator/keyboard/keyboard.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroFormComponent } from './components/heroes/hero-form/hero-form.component';
 import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +20,11 @@ import { BeersComponent } from './components/beers/beers/beers.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { BeersListComponent } from './components/beers/beers-list/beers-list.component';
 import { BeersSliderComponent } from './components/beers/beers-slider/beers-slider.component';
+import { BeersService } from './services/beers.service';
+import { ApodService } from './services/apod.service';
+import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
+import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
+import { PredictiveFormComponent } from './components/forms/predictive-form/predictive-form.component';
 
 @NgModule({
   declarations: [
@@ -35,16 +40,20 @@ import { BeersSliderComponent } from './components/beers/beers-slider/beers-slid
     ApodListComponent,
     BeersComponent,
     BeersListComponent,
-    BeersSliderComponent
+    BeersSliderComponent,
+    ReactiveFormComponent,
+    TemplateFormComponent,
+    PredictiveFormComponent
   ],
   imports: [
     BrowserModule, 
     FormsModule, 
+    ReactiveFormsModule,
     NgbModule, 
     HttpClientModule, 
     NgxSliderModule
   ],
-  providers: [CalculatorService, HeroesService],
+  providers: [CalculatorService, HeroesService, BeersService, ApodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
