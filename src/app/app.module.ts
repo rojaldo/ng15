@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.component';
 import { ApodListComponent } from './components/apod/apod-list/apod-list.component';
 import { BeersComponent } from './components/beers/beers/beers.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,11 @@ import { BeersComponent } from './components/beers/beers/beers.component';
     BeersComponent
   ],
   imports: [
-    BrowserModule, FormsModule, NgbModule, HttpClientModule
+    BrowserModule, 
+    FormsModule, 
+    NgbModule, 
+    HttpClientModule, 
+    NgxSliderModule
   ],
   providers: [CalculatorService, HeroesService],
   bootstrap: [AppComponent]

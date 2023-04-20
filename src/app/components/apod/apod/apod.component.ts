@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Apod } from 'src/app/models/apod';
 import { ApodService } from 'src/app/services/apod.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ApodService } from 'src/app/services/apod.service';
 })
 export class ApodComponent implements OnInit {
 
-  apod: any = {};
+  apod: Apod = new Apod();
 
   constructor(private service: ApodService) {
 
@@ -19,7 +19,7 @@ export class ApodComponent implements OnInit {
     console.log('ngOnInit: ApodComponent');
     this.service.apod$.subscribe(
       (apod) => {
-        this.apod = apod;
+        this.apod = new Apod(apod);
       }
     )
     this.service.getApod();
