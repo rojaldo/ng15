@@ -7,29 +7,16 @@ import { ApodService } from 'src/app/services/apod.service';
   templateUrl: './apod.component.html',
   styleUrls: ['./apod.component.scss']
 })
-export class ApodComponent implements OnInit {
+export class ApodComponent {
 
-  apod: Apod = new Apod();
+  apodDateStr = '';
 
-  constructor(private service: ApodService) {
+  constructor() {
 
-  }
-
-  ngOnInit(): void {
-    console.log('ngOnInit: ApodComponent');
-    this.service.apod$.subscribe(
-      (apod) => {
-        this.apod = new Apod(apod);
-      }
-    )
-    this.service.getApod();
-    // this.service.doSomething();
-    
   }
 
   handleDateChange(dateStr: string) {
-    this.service.getApod(dateStr);
-    
+    this.apodDateStr = dateStr;
   }
 
 

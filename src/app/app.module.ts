@@ -18,6 +18,8 @@ import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.c
 import { ApodListComponent } from './components/apod/apod-list/apod-list.component';
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { BeersListComponent } from './components/beers/beers-list/beers-list.component';
+import { BeersSliderComponent } from './components/beers/beers-slider/beers-slider.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ApodComponent,
     ApodPickerComponent,
     ApodListComponent,
-    BeersComponent
+    BeersComponent,
+    BeersListComponent,
+    BeersSliderComponent
   ],
   imports: [
     BrowserModule, 
