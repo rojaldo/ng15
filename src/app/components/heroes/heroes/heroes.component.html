@@ -1,2 +1,4 @@
-<app-hero-form (onNewHero)="addHero($event)"></app-hero-form>
-<app-heroes-list [myHeroes]="heroes" (onDeleteHero)="deleteHero($event)"></app-heroes-list>
+<div class="container">
+    <app-hero-form (onNewHero)="addHero($event)"></app-hero-form>
+    <app-heroes-list [myHeroes]="heroes" (onDeleteHero)="deleteHero($event)"></app-heroes-list>
+</div>

@@ -1,37 +1,30 @@
-<div class="container">
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-    <li [ngbNavItem]="1">
-      <button ngbNavLink>Calculator</button>
-      <ng-template ngbNavContent>
-        <app-calculator></app-calculator>
-        <app-calculator></app-calculator>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <button ngbNavLink>Heroes</button>
-      <ng-template ngbNavContent>
-        <app-heroes></app-heroes>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="3">
-      <button ngbNavLink>Apod</button>
-      <ng-template ngbNavContent>
-        <app-apod></app-apod>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="4">
-      <button ngbNavLink>Beers</button>
-      <ng-template ngbNavContent>
-        <app-beers></app-beers>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="5">
-      <button ngbNavLink>Forms</button>
-      <ng-template ngbNavContent>
-        <app-predictive-form></app-predictive-form>
-      </ng-template>
-    </li>
-  </ul>
-  
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
-</div>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+    <a class="navbar-brand" href="#">Angular Examples</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" aria-current="page" routerLink="/calculator" routerLinkActive="active">Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" aria-current="page" routerLink="/heroes" routerLinkActive="active">Heroes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" aria-current="page" routerLink="/apod" routerLinkActive="active">Apod</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" aria-current="page" routerLink="/beers" routerLinkActive="active">Beers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" aria-current="page" routerLink="/forms" routerLinkActive="active">Forms</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

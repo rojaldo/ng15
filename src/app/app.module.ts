@@ -25,6 +25,10 @@ import { ApodService } from './services/apod.service';
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
 import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 import { PredictiveFormComponent } from './components/forms/predictive-form/predictive-form.component';
+import { AppRoutingModule } from './modules/app.routing.module';
+import { PageNotFoundComponent } from './components/errors/page-not-found/page-not-found.component';
+import { FormsComponent } from './components/forms/forms/forms.component';
+import { AbvPipe } from './pipes/abv.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,10 @@ import { PredictiveFormComponent } from './components/forms/predictive-form/pred
     BeersSliderComponent,
     ReactiveFormComponent,
     TemplateFormComponent,
-    PredictiveFormComponent
+    PredictiveFormComponent,
+    PageNotFoundComponent,
+    FormsComponent,
+    AbvPipe
   ],
   imports: [
     BrowserModule, 
@@ -51,7 +58,8 @@ import { PredictiveFormComponent } from './components/forms/predictive-form/pred
     ReactiveFormsModule,
     NgbModule, 
     HttpClientModule, 
-    NgxSliderModule
+    NgxSliderModule,
+    AppRoutingModule
   ],
   providers: [CalculatorService, HeroesService, BeersService, ApodService],
   bootstrap: [AppComponent]
